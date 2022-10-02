@@ -11,7 +11,8 @@ import reportWebVitals from "./reportWebVitals";
 // import ShowSample from "./day13/ShowSample";
 // import ShowSample from "./day14/BioTool";
 // import DegreeChange from "./day15/TempChange";
-import StrCodeChange from "./day16/StrCodeChange";
+// import StrCodeChange from "./day16/StrCodeChange";
+import PropSample from "./day17/Parent";
 
 //day4
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -64,9 +65,13 @@ import StrCodeChange from "./day16/StrCodeChange";
 // const root15 = ReactDOM.createRoot(document.getElementById("root"));
 // root15.render(<DegreeChange />);
 
+// //day16
+// const root16 = ReactDOM.createRoot(document.getElementById("root"));
+// root16.render(<StrCodeChange />);
+
 //day16
-const root16 = ReactDOM.createRoot(document.getElementById("root"));
-root16.render(<StrCodeChange />);
+const root17 = ReactDOM.createRoot(document.getElementById("root"));
+root17.render(<PropSample />);
 
 // var element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
 // ReactDOM.render(element, document.getElementById('root'));
