@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ChildLayer from "./Child";
+import CorrectChildLayer from "./ChildCorrect";
 
 function PropSample() {
   let [name, setName] = useState(0);
@@ -10,8 +11,17 @@ function PropSample() {
     setName(newStr);
   };
 
+  const handleChangeName = (name) => {
+    const newStr = name;
+    setName(newStr);
+  };
+
   const handleCounter = (e) => {
     const newStr = e.target.value;
+    setCounter(newStr);
+  };
+  const handleChangeCounter = (name) => {
+    const newStr = name;
     setCounter(newStr);
   };
 
@@ -41,6 +51,14 @@ function PropSample() {
         <p>
           Bello, {name} 是 {counter} 歲
         </p>
+      </div>
+      <div>
+        <CorrectChildLayer
+          name={name}
+          counter={counter}
+          namehandler={handleChangeName}
+          counterhandler={handleChangeCounter}
+        ></CorrectChildLayer>
       </div>
     </div>
   );
