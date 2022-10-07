@@ -13,7 +13,8 @@ import reportWebVitals from "./reportWebVitals";
 // import DegreeChange from "./day15/TempChange";
 // import StrCodeChange from "./day16/StrCodeChange";
 // import PropSample from "./day17/Parent";
-import PropSample from "./day18/Parent";
+// import PropSample from "./day18/Parent";
+import CheckIdComponent from "./idCreater/View";
 
 //day4
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -74,9 +75,13 @@ import PropSample from "./day18/Parent";
 // const root17 = ReactDOM.createRoot(document.getElementById("root"));
 // root17.render(<PropSample />);
 
-//day18
-const root18 = ReactDOM.createRoot(document.getElementById("root"));
-root18.render(<PropSample />);
+// //day18
+// const root18 = ReactDOM.createRoot(document.getElementById("root"));
+// root18.render(<PropSample />);
+
+//day22
+const root22 = ReactDOM.createRoot(document.getElementById("root"));
+root22.render(<CheckIdComponent />);
 
 // var element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
 // ReactDOM.render(element, document.getElementById('root'));

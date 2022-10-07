@@ -1,10 +1,15 @@
-function checkBasic(code) {
-  let result = checkLength(code);
-  result = checkDigit(code);
+export function checkBasic(code) {
+  let result =
+    checkLength(code) &&
+    checkDigit(code) &&
+    checkGender(parseInt(code.substring(1, 2)));
+
+  console.log(`check basic: ${result}`);
+  return result;
 }
 function checkLength(code) {
   let r = false;
-  if (length(code) === 10) r = true;
+  if (code.length === 10) r = true;
 
   console.log("check legnth: " + r);
 
@@ -13,10 +18,18 @@ function checkLength(code) {
 function checkDigit(code) {
   const testStr = code.substring(1);
   for (let i = 0; i < testStr.length; i++) {
-    if (!isNaN(testStr.charAt(i))) {
+    if (isNaN(testStr.charAt(i))) {
+      console.log(
+        `Check digit false. ${testStr.charAt(i)} is ${!isNaN(
+          testStr.charAt(i)
+        )}`
+      );
+
       return false;
     }
   }
+
+  return true;
 }
 
 function checkPlace(code) {
@@ -49,12 +62,12 @@ function checkPlace(code) {
     Y: "31", //陽明山管理局
   };
 
-  if (cityDic.hasKey(code)) {
-    console.log("check place: " + code + "=" + cityDic[code]);
+  if (code in cityDic) {
+    console.log(`check place: ${code} =${cityDic[code]}`);
 
     return cityDic[code];
   }
-  console.log("check place(error): " + code + "=0");
+  console.log(`check place(error): ${code} =0`);
 
   return 0;
 }
@@ -67,7 +80,7 @@ function checkGender(code) {
     9, //外來人口-女
   ];
 
-  if (genderArr.find(code)) {
+  if (genderArr.includes(code)) {
     console.log("check Gender: true");
     return true;
   }
@@ -76,4 +89,33 @@ function checkGender(code) {
   return false;
 }
 
-//`checkCksum()`
+function calBody(code) {
+  let sum = 0;
+  for (let i = 0; i < code.length; i++) {
+    sum += parseInt(code[i]) * (8 - i);
+  }
+  console.log(`body sum = ${sum}`);
+
+  return sum;
+}
+
+function calHead(code) {
+  let sum = parseInt(code[0]) * 1 + parseInt(code[1]) * 9;
+  console.log(`head sum = ${sum}`);
+
+  return sum;
+}
+
+export function checkCkDigit(code) {
+  const placeCode = checkPlace(code.substring(0, 1)); // 取得首碼的數值
+  const bodyCode = code.substring(1, 9); //取得中間非驗證碼的數值
+  const lastCode = code.substring(8); //取得尾碼
+  const idSum = calHead(placeCode) + calBody(bodyCode) + parseInt(lastCode) * 1; //計算總和 //尾數的*1 其實可以不用乘
+  const modResult = idSum % 10;
+  const result = modResult === 0;
+
+  console.log(
+    `sum = ${idSum}, mod result = ${modResult}, check result = ${result}`
+  );
+  return result;
+}
