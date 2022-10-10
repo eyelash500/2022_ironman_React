@@ -1,15 +1,24 @@
 import { useState } from "react";
-import { checkBasic } from "./IDChecker";
+import { checkBasic, checkCkDigit } from "./IDChecker";
 
 function CheckIdComponent() {
   let [id, setId] = useState(0);
-  let [result, setResult] = useState(0);
+  let [result, setResult] = useState(false);
+  let [ckDigitResult, setCkDigitResult] = useState(false);
 
   function IDCheck() {
-    console.log("id=" + id);
     const r = checkBasic(id);
     setResult(r);
     console.log(`"result: ${result}, ${r}"`);
+  }
+
+  function IDCheck_checkDigit() {
+    console.log("check id=" + id);
+    const r = checkCkDigit(id);
+    console.log("back result =" + r);
+
+    setCkDigitResult(r);
+    console.log(`"result: ${ckDigitResult}, ${r}"`);
   }
 
   return (
@@ -23,10 +32,16 @@ function CheckIdComponent() {
           onChange={(e) => setId(e.target.value)}
         ></input>
         <button onClick={IDCheck}>檢查</button>
+        <button onClick={IDCheck_checkDigit}>檢查：檢查碼</button>
       </div>
       <div>
         <label>
           身分證：{id}，結果：{result}
+        </label>
+      </div>
+      <div>
+        <label>
+          身分證：{id}，檢查結果：{ckDigitResult}
         </label>
       </div>
     </div>
