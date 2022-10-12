@@ -15,7 +15,9 @@ import reportWebVitals from "./reportWebVitals";
 // import PropSample from "./day17/Parent";
 // import PropSample from "./day18/Parent";
 // import CheckIdComponent from "./idCreater/View";
-import IdCreaterComponent from "./day25/IdCreater";
+// import IdCreaterComponent from "./day25/IdCreater";
+// import IdCreaterComponent from "./day26/IdCreater";
+import IdCreaterComponent from "./day27/IdCreater";
 
 //day4
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -84,9 +86,18 @@ import IdCreaterComponent from "./day25/IdCreater";
 // const root22 = ReactDOM.createRoot(document.getElementById("root"));
 // root22.render(<CheckIdComponent />);
 
-//day25
-const root25 = ReactDOM.createRoot(document.getElementById("root"));
-root25.render(<IdCreaterComponent />);
+// //day25
+// const root25 = ReactDOM.createRoot(document.getElementById("root"));
+// root25.render(<IdCreaterComponent />);
+
+// //day26
+// const root26 = ReactDOM.createRoot(document.getElementById("root"));
+// root26.render(<IdCreaterComponent />);
+
+//day27
+const root27 = ReactDOM.createRoot(document.getElementById("root"));
+root27.render(<IdCreaterComponent />);
+
 // var element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
 // ReactDOM.render(element, document.getElementById('root'));
 
