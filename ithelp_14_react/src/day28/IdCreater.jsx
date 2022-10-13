@@ -1,16 +1,25 @@
 import { useState } from "react";
 import { createID } from "./IdnoCreater";
+import { checkBasic } from "./IDChecker";
 
 function IdCreaterComponent() {
   let [idno, setIdno] = useState("X");
   let [city, setCity] = useState("Y");
   let [gender, setGender] = useState("2");
+  let [checkId, setcheckId] = useState("X");
+  let [checkResult, setCheckResult] = useState("X");
 
   const idHandler = () => {
     console.log(`city=${city}, gender=${gender}`);
     const r = createID(city, gender);
     setIdno(r);
     console.log(`idno=${idno}(${r})`);
+  };
+
+  const idChechHandler = () => {
+    const r = checkBasic(checkId) === true ? "格式正確" : "格式錯誤";
+    setCheckResult(r);
+    console.log(`id(${checkId}) check result=(${r})`);
   };
 
   return (
@@ -69,6 +78,20 @@ function IdCreaterComponent() {
       </div>
       <div>
         <label>身分證字號：{idno}</label>
+      </div>
+      <div>
+        <label>－－－</label>
+      </div>
+      <div>
+        <label>輸入身分證字號：</label>
+        <input
+          itemType="text"
+          onChange={(e) => setcheckId(e.target.value)}
+        ></input>
+        <button onClick={idChechHandler}>檢查</button>
+      </div>
+      <div>
+        <label>檢查結果：{checkResult}</label>
       </div>
     </div>
   );
