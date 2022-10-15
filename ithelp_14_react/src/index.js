@@ -18,7 +18,11 @@ import reportWebVitals from "./reportWebVitals";
 // import IdCreaterComponent from "./day25/IdCreater";
 // import IdCreaterComponent from "./day26/IdCreater";
 // import IdCreaterComponent from "./day27/IdCreater";
-import IdCreaterComponent from "./day28/IdCreater";
+// import IdCreaterComponent from "./day28/IdCreater";
+// import CssSample from "./day29/CssInJsSample";
+import IdCreaterComponent from "./day30/IdCreater";
+import StrCodeChange from "./day30/StrCodeChange";
+import PropSample from "./day30/Parent";
 
 //day4
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -99,9 +103,27 @@ import IdCreaterComponent from "./day28/IdCreater";
 // const root27 = ReactDOM.createRoot(document.getElementById("root"));
 // root27.render(<IdCreaterComponent />);
 
-//day28
-const root28 = ReactDOM.createRoot(document.getElementById("root"));
-root28.render(<IdCreaterComponent />);
+// //day28
+// const root28 = ReactDOM.createRoot(document.getElementById("root"));
+// root28.render(<IdCreaterComponent />);
+
+// //day29
+// const root29 = ReactDOM.createRoot(document.getElementById("root"));
+// root29.render(<CssSample />);
+
+//day30
+const root30 = ReactDOM.createRoot(document.getElementById("root"));
+// root30.render(<StrCodeChange />);
+// root30.render(<PropSample />);
+// root30.render(<IdCreaterComponent />);
+
+root30.render(
+  <div>
+    <StrCodeChange />
+    <PropSample />
+    <IdCreaterComponent />
+  </div>
+);
 
 // var element = React.createElement('h1', { className: 'greeting' }, 'Hello, world!');
 // ReactDOM.render(element, document.getElementById('root'));
